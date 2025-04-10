@@ -1,7 +1,7 @@
 ARG DOCKER_USERNAME
 ARG DOCKER_PASSWORD
 
-FROM techiescamp/jdk-17:1.0.0 AS build 
+FROM techiescamp/jdk-17:1.0.1 AS build 
 
 # Establecer el directorio de trabajo
 WORKDIR /app
