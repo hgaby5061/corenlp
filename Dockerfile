@@ -48,4 +48,4 @@ RUN mv jollyday.jar ejml-simple.jar ejml-core.jar joda-time.jar jaxb-impl.jar ja
 EXPOSE 9000
 
 # Comando para ejecutar el servidor CoreNLP con los modelos precargados
-CMD ["java", "-mx3g", "-cp", "/app/stanford-corenlp-4.5.0/*:/app/libs/*", "edu.stanford.nlp.pipeline.StanfordCoreNLPServer", "-port", "9000", "-timeout", "60000", "-logLevel", "DEBUG","-modeldir","/app/stanford-corenlp-4.5.0/"]
+CMD ["java", "-mx450m", "-cp", "/app/stanford-corenlp-4.5.0/*:/app/libs/*", "edu.stanford.nlp.pipeline.StanfordCoreNLPServer", "-port", "9000", "-timeout", "60000", "-logLevel", "DEBUG","-modeldir","/app/stanford-corenlp-4.5.0/","-threads", "2']
