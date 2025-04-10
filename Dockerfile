@@ -25,7 +25,7 @@ RUN curl -L -o spanish-models.jar https://nlp.stanford.edu/software/stanford-spa
 EXPOSE 9000
 
 # Comando para ejecutar el servidor CoreNLP con los modelos precargados
-CMD ["java", "-mx1g", "-cp", "/app/stanford-corenlp-4.5.0/*", "edu.stanford.nlp.pipeline.StanfordCoreNLPServer", "-port", "9000", "-timeout", "15000", "-preload", "tokenize,ssplit,pos,lemma,ner,parse,depparse", "-serverProperties", "/app/server.properties"]
+CMD ["java", "-mx1g", "-cp", "/app/stanford-corenlp-4.5.0/*", "edu.stanford.nlp.pipeline.StanfordCoreNLPServer", "-port", "9000", "-timeout", "15000", "-preload", "tokenize,ssplit,pos,lemma,ner,parse,depparse"]
 
 # Copiar configuración (si es necesario)
 # COPY StanfordCoreNLP-spanish.properties /app/stanford-corenlp-4.5.9/
