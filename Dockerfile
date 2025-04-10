@@ -33,8 +33,7 @@ ENV JAVA_OPTS="-Xmx2g -Xms1g"
 
 EXPOSE 9000
 
-CMD ["java", 
-     "-mx350m",  # Aumentar memoria para producción
+CMD ["java",       
      "-cp", 
      "*", 
      "edu.stanford.nlp.pipeline.StanfordCoreNLPServer", 
