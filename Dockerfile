@@ -21,6 +21,9 @@ ARG CORENLP_VERSION=4.5.0
 RUN curl -L -o corenlp.zip https://nlp.stanford.edu/software/stanford-corenlp-${CORENLP_VERSION}.zip \
     && unzip corenlp.zip -d /app \
     && rm corenlp.zip
+    
+RUN curl -L -o models.jar https://nlp.stanford.edu/software/stanford-corenlp-${CORENLP_VERSION}-models.jar \
+    && mv models.jar /app/stanford-corenlp-${CORENLP_VERSION}/
 
 # Descargar los modelos para español
 RUN curl -L -o spanish-models.jar https://nlp.stanford.edu/software/stanford-spanish-corenlp-models-current.jar \
