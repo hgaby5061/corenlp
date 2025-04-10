@@ -7,9 +7,9 @@ FROM techiescamp/jdk-17:1.0.0 AS build
 WORKDIR /app
 
 # Instalar dependencias necesarias
-#RUN apt-get update && \
-    #apt-get install -y unzip && \
-    #rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y unzip && \
+    rm -rf /var/lib/apt/lists/*
 
 # Descargar la última versión de CoreNLP (ajustar la versión según sea necesario)
 ARG CORENLP_VERSION=4.5.0
