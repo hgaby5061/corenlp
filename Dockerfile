@@ -34,8 +34,7 @@ ENV JAVA_OPTS="-Xmx2g -Xms1g"
 EXPOSE 9000
 
 CMD ["java",       
-     "-cp", 
-     "*", 
+     "-cp", "/app/*",
      "edu.stanford.nlp.pipeline.StanfordCoreNLPServer", 
      "-port", "9000", 
      "-timeout", "30000"]
