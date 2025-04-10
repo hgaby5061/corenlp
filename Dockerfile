@@ -6,7 +6,7 @@ FROM techiescamp/jdk-17:1.0.0 AS build
 FROM ubuntu:22.04
 
 # Instalar el JDK y herramientas necesarias
-RUN apt-get update && apt-get install -y techiescamp/jdk-17:1.0.0 unzip curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y openjdk-11-jdk unzip curl && rm -rf /var/lib/apt/lists/*
 
 # Establecer el directorio de trabajo
 WORKDIR /app
