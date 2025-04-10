@@ -1,6 +1,7 @@
-FROM techiescamp/jre-17:1.0.0  # Mejor usar imagen oficial
+ARG DOCKER_USERNAME
+ARG DOCKER_PASSWORD
 
-WORKDIR /app
+FROM techiescamp/jdk-17:1.0.0 AS build 
 
 # Instalar dependencias necesarias
 RUN apt-get update && \
@@ -19,6 +20,16 @@ RUN cd stanford-corenlp-4.5.9 && \
 
 # Copiar configuración (si es necesario)
 # COPY StanfordCoreNLP-spanish.properties /app/stanford-corenlp-4.5.9/
+
+#Imagen final
+FROM techiescamp/jre-17:1.0.0
+WORKDIR /app
+
+# 3. Copiar solo lo necesario
+COPY --from=builder /app/stanford-corenlp-4.5.9 /app
+
+# 4. Configuración esencial
+ENV JAVA_OPTS="-Xmx2g -Xms1g"
 
 EXPOSE 9000
 
