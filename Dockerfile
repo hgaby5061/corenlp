@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-jammy  # Mejor usar imagen oficial
+FROM techiescamp/jre-17:1.0.0  # Mejor usar imagen oficial
 
 WORKDIR /app
 
